@@ -1,1 +1,8 @@
-# First Chapter
+# JavaScript
+
+包含了原生基础JS以及ES2015的使用问题和疑惑解决记录。
+
+同时也包含一些通用的JS功能整理。
+
+
+

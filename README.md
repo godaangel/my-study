@@ -1,3 +1,6 @@
-# My Awesome Book
+# 我的学习记录
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这本是我的学习记录，主要用来记录开发过程中遇到的问题，以及一些学习经验。
+
+包含但不限于JS、CSS、Node、Vue、Git、Python、AI、机器学习等。
+
