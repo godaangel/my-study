@@ -9,12 +9,10 @@
 【splice传送门】[http://www.w3school.com.cn/jsref/jsref\_splice.asp](http://www.w3school.com.cn/jsref/jsref_splice.asp "splice方法解析")
 
 ```js
-Array.prototype.insert = function (index, item) {  
- this.splice(index, 0, item);  
-}; 
+Array.prototype.insert = function (index, item) {  
+ this.splice(index, 0, item);  
+};
 ```
-
-
 
 
 
