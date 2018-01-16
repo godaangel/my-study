@@ -20,12 +20,7 @@ $ ls
 
 项目目录结构如下：
 
-* > app.js
-  > bin
-  > package.json
-  > public
-  > routes
-  > views
+* > app.js bin package.json public routes views
 
 ##### 三、运行项目
 
@@ -37,3 +32,6 @@ $ npm start #该命令可以在package.json里面修改
 ##### 四、访问项目
 
 * 在浏览器中输入`localhost:3000`访问。
+
+
+
