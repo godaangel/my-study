@@ -6,13 +6,10 @@
 
 该方法主要是用于数组的插入扩展，方便直接写inster来插入，而不关注splice方法。
 
-【splice传送门】[http://www.w3school.com.cn/jsref/jsref\_splice.asp](http://www.w3school.com.cn/jsref/jsref_splice.asp "splice方法解析")
+【splice传送门】[splice方法解析](http://www.w3school.com.cn/jsref/jsref_splice.asp "splice方法解析")
 
 ```js
 Array.prototype.insert = function (index, item) {  
  this.splice(index, 0, item);  
 };
 ```
-
-
-
