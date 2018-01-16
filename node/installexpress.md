@@ -20,7 +20,12 @@ $ ls
 
 项目目录结构如下：
 
-* > app.js bin package.json public routes views
+> * app.js
+> * bin
+> * package.json
+> * public
+> * routes
+> * views
 
 ##### 三、运行项目
 
