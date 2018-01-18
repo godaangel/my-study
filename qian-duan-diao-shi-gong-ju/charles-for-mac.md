@@ -2,9 +2,7 @@
 
 > 使用场景：用于将线上页面在本地进行调试，将线上文件指向本地，本地修改以后可看到效果并调试。解决App Web View调试问题。
 
-#### 1、下载Charles
-
-首先，你需要下载一个Charles [https://www.charlesproxy.com/latest-release/download.do](https://www.charlesproxy.com/latest-release/download.do)
+#### 1、下载Char
 
 首先，你需要下载一个`Charles` [https://www.charlesproxy.com/latest-release/download.do](https://www.charlesproxy.com/latest-release/download.do)
 
