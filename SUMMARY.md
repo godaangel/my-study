@@ -14,4 +14,7 @@
   * [组件for循环问题解决](vue/zu-jian-for-xun-huan-wen-ti-jie-jue.md)
 * [前端调试工具](qian-duan-diao-shi-gong-ju.md)
   * [Charles for Mac](qian-duan-diao-shi-gong-ju/charles-for-mac.md)
+* [Git学习](gitxue-xi.md)
+  * [在本地新建Git](gitxue-xi/zai-ben-di-xin-jian-git.md)
+  * [Git小技巧](gitxue-xi/gitxiao-ji-qiao.md)
 
