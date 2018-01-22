@@ -80,12 +80,10 @@ export default {
   },
   data () {
     return {
-      value: 3
+      value: 1
     }
   },
-  mounted() {
-    this.value = 1;
-  },
+  // 监听点击后的value变化
   watch: {
     value(newVal, oldVal){
       console.log(newVal);
@@ -93,11 +91,6 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
-
 ```
 
 
