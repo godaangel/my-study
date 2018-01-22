@@ -19,4 +19,6 @@
 * [Git学习](gitxue-xi.md)
   * [在本地新建Git](gitxue-xi/zai-ben-di-xin-jian-git.md)
   * [Git小技巧](gitxue-xi/gitxiao-ji-qiao.md)
+* [MongoDB](mongodb.md)
+  * 安装
 
