@@ -25,4 +25,5 @@
   * [安装](mongodb/an-zhuang.md)
 * CSS
   * [隐藏滚动条](yin-cang-gun-dong-tiao.md)
+  * [帧动画](zheng-dong-hua.md)
 
