@@ -9,6 +9,7 @@
   * [Express的安装和使用](node/installexpress.md)
   * [Express在服务器安装](node/expresszai-fu-wu-qi-an-zhuang-yu-dao-de-wen-ti.md)
   * [Express渲染Html](node/expressxuan-ran-html.md)
+  * [Express+Websocket](node/express+websocket.md)
 * [Vue](vue.md)
   * [Vue-cli](vue/vue-cli.md)
   * [组件for循环问题解决](vue/zu-jian-for-xun-huan-wen-ti-jie-jue.md)
