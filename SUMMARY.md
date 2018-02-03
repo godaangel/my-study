@@ -15,11 +15,12 @@
   * [组件for循环问题解决](vue/zu-jian-for-xun-huan-wen-ti-jie-jue.md)
   * [自定义组件绑定事件](vue/vuezu-jian-bang-ding-shi-jian.md)
   * [自定义组件v-model](vue/zi-ding-yi-zu-jian-v-model.md)
+  * [Vue图片懒加载](vue/vuetu-pian-lan-jia-zai.md)
 * [前端调试工具](qian-duan-diao-shi-gong-ju.md)
   * [Charles for Mac](qian-duan-diao-shi-gong-ju/charles-for-mac.md)
 * [Git学习](gitxue-xi.md)
   * [在本地新建Git](gitxue-xi/zai-ben-di-xin-jian-git.md)
   * [Git小技巧](gitxue-xi/gitxiao-ji-qiao.md)
 * [MongoDB](mongodb.md)
-  * 安装
+  * [安装](mongodb/an-zhuang.md)
 
