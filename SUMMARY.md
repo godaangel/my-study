@@ -26,4 +26,8 @@
 * CSS
   * [隐藏滚动条](yin-cang-gun-dong-tiao.md)
   * [帧动画](zheng-dong-hua.md)
+* ES6-ES7-ES8
+  * [装饰器decorator](zhuang-shi-qi-decorator.md)
+* 命令行
+  * [npm i --save和--save-dev的区别](npm-i-save548c-save-dev-de-qu-bie.md)
 
