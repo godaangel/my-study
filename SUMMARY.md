@@ -4,6 +4,7 @@
 * [JavaScript](javascript.md)
   * [ajax请求的模式](javascript/ajax.md)
   * [扩展的一些JS方法](javascript/extendsjs.md)
+  * [Curry-函数柯里化](javascript/curryhan-shu-ke-li-hua.md)
 * [Node](node.md)
   * [Node框架](node/nodecli.md)
   * [Express的安装和使用](node/installexpress.md)

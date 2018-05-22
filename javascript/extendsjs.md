@@ -1,6 +1,8 @@
 # 扩展的一些JS方法
 
 > 主要是用原型链来扩展，也会包含其他扩展模式
+>
+> 注：在for\(let i in array\)语法中，扩展的方法会被计入数值，需要使用for\(let i = 0; i &lt; array.length; i++\)
 
 #### 1、数组插入扩展
 
@@ -13,3 +15,6 @@ Array.prototype.insert = function (index, item) {
  this.splice(index, 0, item);  
 };
 ```
+
+
+
