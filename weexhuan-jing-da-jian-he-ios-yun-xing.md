@@ -4,7 +4,7 @@
 
 按照官网文档给的环境先安装好，可以先忽略npm4的警告，[http://weex.apache.org/cn/guide/index.html](http://weex.apache.org/cn/guide/index.html)
 
-2、初始化项目工程
+#### 2、初始化项目工程
 
 运行 `weex create awesome-app`，初始化完成以后进入工程项目，（新版本会自动运行npm）
 
@@ -16,17 +16,17 @@ npm install
 npm start
 ```
 
-3、在ios运行
+#### 3、在ios运行
 
 在项目根目录下运行 `weex platform add ios` \(如果不运行这个命令，run ios会报错，找不到ios工程，这个命令初始运行一次就行\)
 
 命令执行完以后运行 `weex run ios`
 
-注意了
+### &gt;&gt;&gt;注意了&lt;&lt;&lt;
 
 此时可能会报错
 
-首先我遇到的是
+【1】首先我遇到的是
 
 ```
 Error:Error: Command failed: pod update
@@ -36,7 +36,7 @@ Error:Error: Command failed: pod update
 
 这个问题是没有安装 `cocoapods` 造成的，需要运行 `sudo gem install cocoapods`
 
-再进行 `weex run ios`
+【2】再运行 `weex run ios`
 
 又报了下面这个错，醉了
 
