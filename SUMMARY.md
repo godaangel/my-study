@@ -17,6 +17,7 @@
   * [自定义组件绑定事件](vue/vuezu-jian-bang-ding-shi-jian.md)
   * [自定义组件v-model](vue/zi-ding-yi-zu-jian-v-model.md)
   * [Vue图片懒加载](vue/vuetu-pian-lan-jia-zai.md)
+  * [SSR探索](vue/ssrtan-suo.md)
 * [前端调试工具](qian-duan-diao-shi-gong-ju.md)
   * [Charles for Mac](qian-duan-diao-shi-gong-ju/charles-for-mac.md)
 * [Git学习](gitxue-xi.md)
