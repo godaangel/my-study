@@ -740,7 +740,7 @@ export default {
 }
 ```
 
-JSX的主要转换还是依靠我们之前安装的babel
+JSX的主要转换还是依靠我们之前安装的[babel插件](https://github.com/vuejs/babel-plugin-transform-vue-jsx)，而JSX的事件以及属性的用法见babel插件的[使用说明](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage)，这里面包含了vue里面事件和属性对应的用法说明。
 
 
 
