@@ -41,6 +41,8 @@ Web 页面的大多数操作和逻辑的本质就是不停地修改 DOM 元素�
 
 CreateElement 到底会返回什么呢？其实不是一个实际的 DOM 元素（返回的是Vnode）。它更准确的名字可能是 createNodeDescription，因为它所包含的信息会告诉 Vue 页面上需要渲染什么样的节点，及其子节点。
 
+**【TIPS】`CreateElement`函数在惯例中通常也写作`h`**
+
 ##### 1、**CreateElement的参数如下所示**：（~~太懒了直接搬的官网~~）
 
 ```js
@@ -140,9 +142,21 @@ createElement(
 
 ### 【起步】最基本的实例
 
-这是一个基础的Demo，包含了简单的渲染用法，标签，props，slot以及createElement和点击事件。以下示例Demo均采用单文件组件的方式，工程用`vue-cli`搭建的`webpack-simple`工程。
+这是一个基础的Demo，包含了
 
-**组件`wii-first`**
+* 简单的渲染用法
+
+* 标签
+
+* props
+
+* slot
+
+* 点击事件
+
+以下示例Demo均采用单文件组件的方式，工程用`vue-cli`搭建的`webpack-simple`工程。
+
+**组件**`wii-first`
 
 ```js
 export default {
