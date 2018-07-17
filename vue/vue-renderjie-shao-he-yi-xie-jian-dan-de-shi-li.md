@@ -191,8 +191,8 @@ export default {
       // this.$slots.subtitle,
       [
         '第一个组件, ',
-        ...this.$slots.default, // 具名slots传递 此处也可以用children来代替
-        ...this.$slots.subtitle,
+        ...this.$slots.default, // 默认slots传递
+        ...this.$slots.subtitle, // 具名slots传递
         '，此处是data的值: ',
         this.msg,
         createElement('button', {
@@ -379,6 +379,16 @@ export default {
 | .once | ~ |
 | .capture.once 或 .once.capture | ~! |
 
+例如
+
+```js
+on: {
+  '!click': this.doThisInCapturingMode,
+  '~keyup': this.doThisOnce,
+  '~!mouseover': this.doThisOnceInCapturingMode
+}
+```
+
 **其他事件修饰符，对应的事件处理函数中使用事件方法**
 
 | template事件修饰符 | 对应的事件方法 |
@@ -389,5 +399,113 @@ export default {
 | Keys: .enter, .13 | if \(event.keyCode !== 13\) return \(对于其他的键盘事件修饰符，将13换成其他的键盘code就行\) |
 | Modifiers Keys: .ctrl, .alt, .shift, .meta | if \(!event.ctrlKey\) return \(将 ctrlKey 换成 altKey, shiftKey, 或者 metaKey, respectively\) |
 
+例如
 
+```js
+on: {
+  keyup: function (event) {
+    // 如果触发事件的元素不是事件绑定的元素
+    // 则返回
+    if (event.target !== event.currentTarget) return
+    // 如果按下去的不是 enter 键或者
+    // 没有同时按下 shift 键
+    // 则返回
+    if (!event.shiftKey || event.keyCode !== 13) return
+    // 阻止 事件冒泡
+    event.stopPropagation()
+    // 阻止该元素默认的 keyup 事件
+    event.preventDefault()
+    // ...
+  }
+}
+```
+
+### 【进阶】CreateElement中`slot`属性的用法
+
+这个Demo主要展示render中createElement的配置slot属性用法。
+
+> 因为此处一直很疑惑什么情况下能够用到这个slot属性，所以就试了一下，仅供参考，具体使用场景需要根据业务逻辑来定
+
+**组件`wii-third`**
+
+```js
+export default {
+  name: 'wii-third',
+  data() {
+    return {}
+  },
+  components: {
+    WiiTestSlot: {
+      name: 'wii-test-slot',
+      render(createElement) {
+        this.$slots.testslot = this.$slots.testslot || []
+          // 等价于
+          // <div>
+          // 	第三个组件，测试在组件中定义slot, <slot name="testslot"></slot>
+          // </div>
+        return createElement(
+          'div', [
+            '第三个组件，测试在组件中定义slot, ',
+            ...this.$slots.testslot
+          ]
+        )
+      }
+    },
+    WiiTestSlotIn: {
+      name: 'wii-test-slot-in',
+      render(createElement) {
+        // 等价于
+        // <span>我是组件中的slot内容</span>
+        return createElement(
+          'span', [
+            '我是组件中的slot内容'
+          ]
+        )
+      }
+    }
+  },
+  props: {
+
+  },
+  render: function(createElement) {
+    // 等价于
+    // <div style="margin-top: 15px;">
+    // 	<wii-test-slot>
+    // 	  <wii-test-slot-in slot="testslot"></wii-test-slot-in>
+    // 	</wii-test-slot>
+    // </div>
+    return createElement(
+      'div', {
+        style: {
+          marginTop: '15px'
+        }
+      }, [
+        createElement(
+          'wii-test-slot',
+          //这么写不会被渲染到节点中去
+          // createElement(
+          //    'wii-test-slot-in',
+          //    {
+          //      slot: 'testslot'
+          //    }
+          //  ),
+          [
+            // createElement再放createElement需要放入数组里面，建议所有的组件的内容都放到数组里面，统一格式，防止出错
+            createElement(
+              'wii-test-slot-in', {
+                slot: 'testslot'
+              }
+            )
+          ]
+        )
+      ]
+    )
+  },
+  methods: {
+
+  }
+}
+```
+
+【Tips】：如果createElement里面的第三个参数传递的是createElement生成的VNode对象，将不会被渲染到节点中，需要放到数组中才能生效，此处猜测是因为VNode对象不会被直接识别，因为文档要求是String或者Array
 
