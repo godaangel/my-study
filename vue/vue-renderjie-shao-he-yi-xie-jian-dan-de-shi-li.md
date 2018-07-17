@@ -631,7 +631,7 @@ export default {
 
 写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的。我们试试来换个口味，试试JSX的写法。
 
-_工欲善其事，必先利其器_
+_工欲善其事，必先利其器。_
 
 * 首先我们安装vue写JSX必要的依赖：
 
@@ -642,6 +642,12 @@ npm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-
 * 安装完成以后，在`.babelrc`文件配置`"plugins": ["transform-vue-jsx"]`。
 
 * 将webpack配置文件中的js解析部分改成`test: /\.jsx?$/`表示对jsx的代码块进行解析。
+
+**这个示例做了如下功能：**
+
+1. 通过props传入颜色，并在子组件配置
+2. 点击改变颜色
+3. 点击事件通过native获取
 
 **父组件**`wii-jsx`
 
@@ -679,6 +685,62 @@ npm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-
     }
 </script>
 ```
+
+**子组件`wii-jsx-item`**
+
+_该子组件在父组件中被引入，并用JSX的写法渲染。_
+
+```js
+export default {
+  name: 'wii-jsx-item',
+  data() {
+    return {}
+  },
+  props: {
+    color: String
+  },
+  render: function(createElement) {
+    // 等价于 <div class="wii-jsx-item"><slot></slot></div>
+    return createElement(
+      'div', {
+        class: 'wii-jsx-item',
+        style: {
+          color: this.color
+        }
+      },
+      this.$slots.default
+    )
+  },
+  methods: {
+
+  }
+}
+```
+
+**引入方式**
+
+```js
+<template>
+  <div id="app">
+    <wii-jsx></wii-jsx>
+  </div>
+</template>
+
+<script>
+import WiiJsx from './components/jsx/index.vue'
+
+export default {
+  name: 'app',
+  components: {
+    WiiJsx
+  },
+  data() {
+    return {}
+  }
+}
+```
+
+JSX的主要转换还是依靠我们之前安装的babel
 
 
 
