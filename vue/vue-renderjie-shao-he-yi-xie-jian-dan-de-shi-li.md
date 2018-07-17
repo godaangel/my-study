@@ -161,6 +161,7 @@ createElement(
 **组件**`wii-first`
 
 ```js
+<script>
 export default {
   name: 'wii-first',
   data() {
@@ -209,6 +210,7 @@ export default {
     }
   }
 }
+</script>
 ```
 
 **引入方式**
@@ -246,6 +248,7 @@ export default {
 **组件**`wii-second`
 
 ```js
+<script>
 export default {
   name: 'wii-second',
   data() {
@@ -331,6 +334,7 @@ export default {
     }
   }
 }
+</script>
 ```
 
 **引入方式**
@@ -429,6 +433,7 @@ on: {
 **组件**`wii-third`
 
 ```js
+<script>
 export default {
   name: 'wii-third',
   data() {
@@ -505,7 +510,34 @@ export default {
 
   }
 }
+</script>
 ```
 
 【Tips】：如果createElement里面的第三个参数传递的是createElement生成的VNode对象，将不会被渲染到节点中，需要放到数组中才能生效，此处猜测是因为VNode对象不会被直接识别，因为文档要求是String或者Array。
+
+**引入方式**
+
+```js
+<template>
+  <div id="app">
+    <wii-third></wii-third>
+  </div>
+</template>
+
+<script>
+import WiiThird from './components/third/index.vue'
+
+export default {
+  name: 'app',
+  components: {
+    WiiThird
+  },
+  data() {
+    return {}
+  }
+}
+</script>
+```
+
+
 
