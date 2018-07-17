@@ -570,9 +570,9 @@ export default {
   render: function(createElement) {
     // 等价于 
     // <div style="margin-top: 15px;">
-    // 	  <wii-scoped message="测试scopedSlots，我是传入的message">
-    // 	    <span slot-scope="props">{{props.text}}</span>
-    // 	  </wii-scoped>
+    //   <wii-scoped message="测试scopedSlots，我是传入的message">
+    //     <span slot-scope="props">{{props.text}}</span>
+    //   </wii-scoped>
     // </div>
     return createElement(
       'div', {
@@ -596,8 +596,6 @@ export default {
   }
 }
 ```
-
-
 
 
 
