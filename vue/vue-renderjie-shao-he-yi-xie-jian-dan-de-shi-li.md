@@ -259,9 +259,9 @@ export default {
   render: function(createElement) {
     // 等价于
     // <div id="second" class="wii-second blue-color" style="color: green;" @click="clickHandler">
-    // 	我是第二个组件测试, 点我触发组件内部click和外部定义的@click.native事件。
-    // 	<div>{{myProp}}</div>
-    // 	<button @click="buttonClick">触发emit</button>
+    //     我是第二个组件测试, 点我触发组件内部click和外部定义的@click.native事件。
+    //     <div>{{myProp}}</div>
+    //     <button @click="buttonClick">触发emit</button>
     // </div>
     return createElement(
       'div', {
@@ -269,8 +269,8 @@ export default {
         // 接收一个字符串、对象或字符串和对象组成的数组
         // class: 'wii-second',
         // class: {
-        // 	'wii-second': true,
-        // 	'grey-color': true
+        //     'wii-second': true,
+        //     'grey-color': true
         // },
         class: [{
           'wii-second': true
@@ -281,7 +281,7 @@ export default {
         style: {
           color: 'green'
         },
-        //【attrs】正常的 HTML 特性, id、title、align等，不支持class，原因可能是上面能配置class[仅猜测]
+        //【attrs】正常的 HTML 特性, id、title、align等，不支持class，原因是上面的class优先级最高[仅猜测]
         // 等同于DOM的 Attribute
         attrs: {
           id: 'second',
@@ -332,6 +332,62 @@ export default {
   }
 }
 ```
+
+**引入方式**
+
+```js
+<template>
+  <div id="app">
+    <wii-second @click.native="nativeClick" @on-click-button="clickButton"></wii-second>
+  </div>
+</template>
+
+<script>
+import WiiSecond from './components/second/index.vue'
+
+export default {
+  name: 'app',
+  components: {
+    WiiSecond
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    nativeClick() {
+      console.log('这是组件外部click.native触发的事件，第二个组件被点击了')
+    },
+    clickButton() {
+      console.log('这是组件外部触发的【emit】事件，第二个组件被点击了')
+    }
+  }
+}
+</script>
+```
+
+#### 事件 & 按键修饰符
+
+上面例子中用到了`e.stopPropagation`这个方法，等价于 template 模板写法的`click.stop`，其他的事件和按键修饰符也有对应的方法，对应情况如下。
+
+**事件修饰符对应的前缀**
+
+| template事件修饰符 | render写法前缀 |
+| :--- | :--- |
+| .passive | & |
+| .capture | ! |
+| .once | ~ |
+| .capture.once 或 .once.capture | ~! |
+
+**其他事件修饰符，对应的事件处理函数中使用事件方法**
+
+| template事件修饰符 | 对应的事件方法 |
+| :--- | :--- |
+| .stop | event.stopPropagation\(\) |
+| .prevent | event.preventDefault\(\) |
+| .self | if \(event.target !== event.currentTarget\) return |
+| Keys: .enter, .13 | if \(event.keyCode !== 13\) return \(对于其他的键盘事件修饰符，将13换成其他的键盘code就行\) |
+| Modifiers Keys: .ctrl, .alt, .shift, .meta | if \(!event.ctrlKey\) return \(将 ctrlKey 换成 altKey, shiftKey, 或者 metaKey, respectively\) |
 
 
 
