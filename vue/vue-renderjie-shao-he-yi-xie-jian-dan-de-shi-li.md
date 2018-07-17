@@ -426,7 +426,7 @@ on: {
 
 > 因为此处一直很疑惑什么情况下能够用到这个slot属性，所以就试了一下，仅供参考，具体使用场景需要根据业务逻辑来定
 
-**组件`wii-third`**
+**组件**`wii-third`
 
 ```js
 export default {
@@ -441,7 +441,7 @@ export default {
         this.$slots.testslot = this.$slots.testslot || []
           // 等价于
           // <div>
-          // 	第三个组件，测试在组件中定义slot, <slot name="testslot"></slot>
+          //     第三个组件，测试在组件中定义slot, <slot name="testslot"></slot>
           // </div>
         return createElement(
           'div', [
@@ -470,9 +470,9 @@ export default {
   render: function(createElement) {
     // 等价于
     // <div style="margin-top: 15px;">
-    // 	<wii-test-slot>
-    // 	  <wii-test-slot-in slot="testslot"></wii-test-slot-in>
-    // 	</wii-test-slot>
+    //     <wii-test-slot>
+    //       <wii-test-slot-in slot="testslot"></wii-test-slot-in>
+    //     </wii-test-slot>
     // </div>
     return createElement(
       'div', {
@@ -507,5 +507,5 @@ export default {
 }
 ```
 
-【Tips】：如果createElement里面的第三个参数传递的是createElement生成的VNode对象，将不会被渲染到节点中，需要放到数组中才能生效，此处猜测是因为VNode对象不会被直接识别，因为文档要求是String或者Array
+【Tips】：如果createElement里面的第三个参数传递的是createElement生成的VNode对象，将不会被渲染到节点中，需要放到数组中才能生效，此处猜测是因为VNode对象不会被直接识别，因为文档要求是String或者Array。
 
