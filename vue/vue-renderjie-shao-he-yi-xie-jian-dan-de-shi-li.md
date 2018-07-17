@@ -213,6 +213,8 @@ export default {
 </script>
 ```
 
+【Tips】：CreateElement的第三个参数在文档中规定组件树中的所有 VNode 必须是唯一的，也就是说在第三个参数中有两个指向相同的Vnode是无效的。但经过实践发现，实际上是可以渲染出来的，在此不推荐这么写哦，可能会掉到不可
+
 **引入方式**
 
 ```js
@@ -543,7 +545,7 @@ export default {
 
 这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的template用法和解释参考[vue-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#解构-slot-scope)。
 
-**组件`wii-forth`**
+**组件**`wii-forth`
 
 ```js
 <script>
@@ -624,6 +626,10 @@ export default {
 }
 </script>
 ```
+
+### 【换口气儿】Render中的JSX配置和用法
+
+写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的
 
 
 
