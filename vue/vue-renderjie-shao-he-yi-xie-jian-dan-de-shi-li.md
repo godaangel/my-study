@@ -236,5 +236,21 @@ export default {
 </script>
 ```
 
+### 【进阶】包含属性配置较完整的实例
+
+这个Demo主要展示了createElement属性用法，包含
+
+* class，style，attrs，on等
+* 包含了点击事件以及`click.stop`的转换示例
+* 事件 & 按键修饰符
+
+**组件`wii-second`**
+
+```
+
+```
+
+
+
 
 
