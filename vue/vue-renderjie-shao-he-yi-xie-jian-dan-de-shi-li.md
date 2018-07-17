@@ -142,6 +142,8 @@ createElement(
 
 这是一个基础的Demo，包含了简单的渲染用法，标签，props，slot以及createElement和点击事件。以下示例Demo均采用单文件组件的方式，工程用`vue-cli`搭建的`webpack-simple`工程。
 
+**组件`wii-first`**
+
 ```js
 export default {
   name: 'wii-first',
@@ -193,7 +195,45 @@ export default {
 }
 ```
 
+**引入方式**
 
+```js
+<template>
+  <div id="app">
+    <wii-first level="1">我是标题 <span slot="subtitle">我是subtitle</span></wii-first>
+  </div>
+</template>
+
+<script>
+import WiiFirst from './components/first/index.vue'
+import WiiSecond from './components/second/index.vue'
+import WiiThird om './components/third/index.vue'import WiiForth from './components/forth/index.vue'
+import WiiJsx from './components/jsx/index.vue
+export default {
+  name: 'app',
+  components: {
+    WiiFirst,
+    WiiSecond,
+    WiiThird,
+    WiiForth,
+    WiiJsx
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    nativeClick() {
+      console.log('这是组件外部触发的事件，第二个组件被点击了')
+    },
+    clickButton() {
+      console.log('这是组件外部触发的【emit】事件，第二个组件被点击了')
+    }
+  }
+}
+</script>
+```
 
 
 
