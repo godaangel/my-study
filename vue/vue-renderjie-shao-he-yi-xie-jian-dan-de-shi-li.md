@@ -213,7 +213,7 @@ export default {
 </script>
 ```
 
-【Tips】：CreateElement的第三个参数在文档中规定组件树中的所有 VNode 必须是唯一的，也就是说在第三个参数中有两个指向相同的Vnode是无效的。但经过实践发现，实际上是可以渲染出来的，在此不推荐这么写哦，可能会掉到不可
+【Tips】：CreateElement的第三个参数在文档中规定组件树中的所有 VNode 必须是唯一的，也就是说在第三个参数中有两个指向相同的Vnode是无效的。但经过实践发现，实际上是可以渲染出来的，在此不推荐这么写哦，可能会掉到不可预料的大坑hiahiahia~
 
 **引入方式**
 
@@ -629,7 +629,56 @@ export default {
 
 ### 【换口气儿】Render中的JSX配置和用法
 
-写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的
+写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的。我们试试来换个口味，试试JSX的写法。
+
+_工欲善其事，必先利其器_
+
+* 首先我们安装vue写JSX必要的依赖：
+
+```
+npm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props babel-preset-env --save-dev
+```
+
+* 安装完成以后，在`.babelrc`文件配置` "plugins": ["transform-vue-jsx"]`。
+
+* 将webpack配置文件中的js解析部分改成`test: /\.jsx?$/`表示对jsx的代码块进行解析。
+
+**父组件`wii-jsx`**
+
+```js
+<script type="text/jsx">
+ 	import WiiJsxItem from './item.vue'
+	export default {
+		name: 'wii-jsx',
+		components: {
+			WiiJsxItem
+		},
+		data() {
+			return {
+				color: 'red'
+			}
+		},
+		props: {
+			
+		},
+		render: function (h) {
+	    return (
+	    	<div class="wii-jsx">
+					<wii-jsx-item color={this.color} nativeOnClick={this.clickHandler}>
+		    		<span>我是wii-jsx-item组件的slot, color通过变量传入: {this.color}</span>
+		    	</wii-jsx-item>
+	    	</div>
+	    )
+	  },
+	  methods: {
+	  	clickHandler() {
+	  		this.color = this.color == 'red' ? 'blue' : 'red'
+				console.log(`点击了wii-jsx-item，通过native触发，改变了颜色为【${this.color}】`)
+	  	}
+	  }
+	}
+</script>
+```
 
 
 
