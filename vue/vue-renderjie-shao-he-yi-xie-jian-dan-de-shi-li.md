@@ -639,44 +639,44 @@ _工欲善其事，必先利其器_
 npm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props babel-preset-env --save-dev
 ```
 
-* 安装完成以后，在`.babelrc`文件配置` "plugins": ["transform-vue-jsx"]`。
+* 安装完成以后，在`.babelrc`文件配置`"plugins": ["transform-vue-jsx"]`。
 
 * 将webpack配置文件中的js解析部分改成`test: /\.jsx?$/`表示对jsx的代码块进行解析。
 
-**父组件`wii-jsx`**
+**父组件**`wii-jsx`
 
 ```js
 <script type="text/jsx">
- 	import WiiJsxItem from './item.vue'
-	export default {
-		name: 'wii-jsx',
-		components: {
-			WiiJsxItem
-		},
-		data() {
-			return {
-				color: 'red'
-			}
-		},
-		props: {
-			
-		},
-		render: function (h) {
-	    return (
-	    	<div class="wii-jsx">
-					<wii-jsx-item color={this.color} nativeOnClick={this.clickHandler}>
-		    		<span>我是wii-jsx-item组件的slot, color通过变量传入: {this.color}</span>
-		    	</wii-jsx-item>
-	    	</div>
-	    )
-	  },
-	  methods: {
-	  	clickHandler() {
-	  		this.color = this.color == 'red' ? 'blue' : 'red'
-				console.log(`点击了wii-jsx-item，通过native触发，改变了颜色为【${this.color}】`)
-	  	}
-	  }
-	}
+     import WiiJsxItem from './item.vue'
+     export default {
+        name: 'wii-jsx',
+        components: {
+            WiiJsxItem
+        },
+        data() {
+            return {
+                color: 'red'
+            }
+        },
+        props: {
+
+        },
+        render: function (h) {
+        return (
+            <div class="wii-jsx">
+                <wii-jsx-item color={this.color} nativeOnClick={this.clickHandler}>
+                    <span>我是wii-jsx-item组件的slot, color通过变量传入: {this.color}</span>
+                </wii-jsx-item>
+            </div>
+        )
+      },
+      methods: {
+          clickHandler() {
+            this.color = this.color == 'red' ? 'blue' : 'red'
+            console.log(`点击了wii-jsx-item，通过native触发，改变了颜色为【${this.color}】`)
+          }
+      }
+    }
 </script>
 ```
 
