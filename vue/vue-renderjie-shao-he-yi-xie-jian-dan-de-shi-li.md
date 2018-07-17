@@ -541,7 +541,7 @@ export default {
 
 ### 【深入】CreateElement中`scopedSlots`的用法
 
-这个Demo主要展示scopedSlots的用法，包括定义和使用。
+这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的用法参考[https://cn.vuejs.org/v2/guide/components-slots.html\#%E8%A7%A3%E6%9E%84-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#%E8%A7%A3%E6%9E%84-slot-scope)
 
 ```js
 export default {
