@@ -541,9 +541,12 @@ export default {
 
 ### 【深入】CreateElement中`scopedSlots`的用法
 
-这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的用法参考[vue-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#%E8%A7%A3%E6%9E%84-slot-scope)
+这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的template用法和解释参考[vue-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#解构-slot-scope)。
+
+**组件`wii-forth`**
 
 ```js
+<script>
 export default {
   name: 'wii-forth',
   data() {
@@ -584,7 +587,7 @@ export default {
           props: {
             message: '测试scopedSlots，我是传入的message'
           },
-          // 传递scopedSlots
+          // 传递scopedSlots，通过props(自定义名称)取值
           scopedSlots: {
             default: function(props) {
               return createElement('span', props.text)
@@ -595,6 +598,31 @@ export default {
     )
   }
 }
+</script>
+```
+
+**引入方法**
+
+```js
+<template>
+  <div id="app">
+    <wii-forth></wii-forth>
+  </div>
+</template>
+
+<script>
+import WiiForth from './components/forth/index.vue'
+
+export default {
+  name: 'app',
+  components: {
+    WiiForth
+  },
+  data() {
+    return {}
+  }
+}
+</script>
 ```
 
 
