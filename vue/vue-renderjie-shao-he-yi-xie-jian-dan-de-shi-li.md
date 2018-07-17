@@ -206,29 +206,14 @@ export default {
 
 <script>
 import WiiFirst from './components/first/index.vue'
-import WiiSecond from './components/second/index.vue'
-import WiiThird om './components/third/index.vue'import WiiForth from './components/forth/index.vue'
-import WiiJsx from './components/jsx/index.vue
 export default {
   name: 'app',
   components: {
-    WiiFirst,
-    WiiSecond,
-    WiiThird,
-    WiiForth,
-    WiiJsx
+    WiiFirst
   },
   data() {
     return {
 
-    }
-  },
-  methods: {
-    nativeClick() {
-      console.log('这是组件外部触发的事件，第二个组件被点击了')
-    },
-    clickButton() {
-      console.log('这是组件外部触发的【emit】事件，第二个组件被点击了')
     }
   }
 }
