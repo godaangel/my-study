@@ -8,7 +8,7 @@ _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而
 
 ### 本篇文章主要介绍了以下几点
 
-> 了解基本概念的客官可以直接下拉到实例，实例已上传github，传送门[vue-render-test](https://github.com/godaangel/vue-render-test.git)
+> 了解基本概念的客官可以直接下拉到实例，实例已上传github
 
 * 虚拟DOM
 * CreateElement函数
@@ -18,6 +18,8 @@ _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而
 * 【深入】CreateElement中`scopedSlots`的用法
 * 【换口气儿】Render中的JSX配置和用法
 * 【深入】函数式组件
+
+### [Github传送门](https://github.com/godaangel/vue-render-test.git)
 
 ### 虚拟DOM
 
