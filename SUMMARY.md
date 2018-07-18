@@ -19,6 +19,7 @@
   * [Vue图片懒加载](vue/vuetu-pian-lan-jia-zai.md)
   * [SSR探索](vue/ssrtan-suo.md)
   * [Vue Render介绍和一些基本的实例](vue/vue-renderjie-shao-he-yi-xie-jian-dan-de-shi-li.md)
+  * [函数式组件](vue/han-shu-shi-zu-jian.md)
 * [前端调试工具](qian-duan-diao-shi-gong-ju.md)
   * [Charles for Mac](qian-duan-diao-shi-gong-ju/charles-for-mac.md)
 * [Git学习](gitxue-xi.md)
