@@ -1,5 +1,7 @@
 # Vue Render介绍和一些基本的实例
 
+> 为啥研究这个？在之前开发组件库的过程中，遇到了许多遗留的问题，包括数据模板渲染、组件按需加载、引入自定义组件插槽等等，所以为了修复和避免这些问题，学习一波更接近编译器的编写方式，看看如何通过这种完全编程方式来解决一波这些问题~当然这里只是一些最基本的使用和探索，因为官网例子太少了，只能一个个自己搭=。=
+
 _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力，这就是**render 函数**，它比 template 更接近编译器。_（**从官网复制的，慌得一批，其实简单来说就是以函数的方式写HTML，可控性更强一些~**）
 
 当然，官网已经给出了一个使用template来编写的不方便的demo，所以在这里就不反复提起了，初次使用或者有兴趣的大佬可以直接戳这个链接了解一下~[Vue Render](https://cn.vuejs.org/v2/guide/render-function.html#基础 "Vue Render")
@@ -246,6 +248,10 @@ export default {
 
 * class，style，attrs，on等
 * 包含了点击事件以及`click.stop`的转换示例
+
+不包含  
+
+* v-for v-if v-model的实现，这些在官网都有很详细的说明了 [传送门](https://cn.vuejs.org/v2/guide/render-function.html#v-if-%E5%92%8C-v-for)
 
 **组件**`wii-second`
 
