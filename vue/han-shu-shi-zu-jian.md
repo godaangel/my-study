@@ -1,4 +1,4 @@
-下面来进行最后一个模块的介绍，函数式组件functional，这个东西的用法就见仁见智了，这里也没啥好的方案，只是给出了一些示例，各位大佬如果有一些具体的使用到的地方，阔以指点一下哇~thx~\(害羞.jpg\)。
+下面来进行最后一个模块的介绍，函数式组件functional，这个东西的用法就见仁见智了，这里也没啥好的方案，只是给出了一些示例，各位大佬如果有一些具体的使用到的地方，阔以指点一下哇~thx~\(~~害羞.jpg~~\)。
 
 _官方文档的定义是functional组件需要的一切都是通过上下文传递，包括：_
 
@@ -10,11 +10,11 @@ _官方文档的定义是functional组件需要的一切都是通过上下文传
 * _listeners: \(2.3.0+\) 一个包含了所有在父组件上注册的事件侦听器的对象。这只是一个指向 data.on 的别名。_
 * _injections: \(2.3.0+\) 如果使用了 inject 选项，则该对象包含了应当被注入的属性。_
 
-_在添加 `functional: true`之后，组件的render函数会增加第二个参数context（第一个是createElement），数据和节点通过context传递。_
+_在添加 _`functional: true`_之后，组件的render函数会增加第二个参数context（第一个是createElement），数据和节点通过context传递。_
 
 _**Tips：**_
 
-_在 2.3.0 之前的版本中，如果一个函数式组件想要接受 props，则`props`选项是必须的。在 2.3.0 或以上的版本中，你可以省略`props`选项，所有组件上的属性都会被自动解析为 props。_
+_在 2.3.0 之前的版本中，如果一个函数式组件想要接受 props，则_`props`_选项是必须的。在 2.3.0 或以上的版本中，你可以省略_`props`_选项，所有组件上的属性都会被自动解析为 props。_
 
 ---
 
@@ -160,9 +160,127 @@ export default {
 
 #### 函数式组件二 `wii-choose-comp`用在组件切换的functional
 
-在这个示例中，通过props来切换加载不同的组件，并且在props传递给子组件之前操作它，组件内部定义了不同的click事件来展示示例。如果对一批组件进行同样的操作，则可以用这个functional，类似于加工厂。
+在这个示例中，通过props来切换加载不同的组件，并且在props传递给子组件之前操作它，组件内部定义了click.native事件来展示示例。如果对一批组件进行同样的操作，则可以用这个functional，类似于加工厂。
 
 当然如果组件需要不同的点击事件或者表现方式也可以在各个组件内部单独写逻辑或者监听~因为`wii-choose-comp`这个外壳本质不过就是个函数而已~
+
+**组件主体 `wii-choose-comp`**
+
+```js
+<script>
+export default {
+  name: 'wii-choose-comp',
+  functional: true,
+  props: { // 2.3.0版本以上也可以不写props，会将组件属性默认绑定成props，为了统一标准还是写上
+    componentName: String // 组件名
+  },
+  render: function(createElement, context) {
+    // 给组件加上class
+    context.data.class = [context.props.componentName]
+    
+    // 在props传给子组件之前操作它
+    context.data.props = {
+      compName: context.props.componentName
+    }
+
+    context.data.nativeOn = {
+      click() {
+        alert('我是functional里面统一的点击事件')
+      }
+    }
+    return createElement(context.props.componentName, context.data, context.children)
+  }
+}
+</script>
+```
+
+**切换组件1 `wii-comp-one`**
+
+```js
+<script>
+export default {
+  name: 'wii-comp-one',
+  props: {
+    compName: String
+  },
+  render: function(createElement) {
+    return createElement('div', [
+      '我是第一个comp, 我有点击效果, ',
+      `我的名字叫${this.compName}, `,
+      ...this.$slots.default
+    ])
+  }
+}
+</script>
+```
+
+**切换组件2 `wii-comp-two`**
+
+```js
+<script>
+export default {
+  name: 'wii-comp-two',
+  props: {
+    compName: String
+  },
+  render: function(createElement) {
+    return createElement('div', [
+      '我是第二个comp, 点我试试呗, ',
+      `我的名字叫${this.compName}, `,
+      ...this.$slots.default
+    ])
+  }
+}
+</script>
+```
+
+**引入方式**
+
+```js
+<template>
+  <div id="app">
+    <button @click="changeComponent">点击切换组件</button>
+    <wii-choose-comp :component-name="componentName">
+      <span>我是{{componentName}}的slot</span>
+    </wii-choose-comp>
+  </div>
+</template>
+
+<script>
+import WiiChooseComp from './components/functional/chooseComp.vue'
+import WiiCompOne from './components/functional/comp1.vue'
+import WiiCompTwo from './components/functional/comp2.vue'
+
+export default {
+  name: 'app',
+  components: {
+    WiiChooseComp,
+    WiiCompOne,
+    WiiCompTwo
+  },
+  data() {
+    return {
+      componentName: 'wii-comp-one'
+    }
+  },
+  methods: {
+    changeComponent() {
+      this.componentName = this.componentName == 'wii-comp-one' ? 'wii-comp-two' : 'wii-comp-one'
+    }
+  }
+}
+</script>
+```
+
+**【Tips】**需要将待切换的组件全部引入到外层。（_不造有没有更好的办法？_）
+
+
+
+### 总结
+
+以上就是最近对Vue Render的一个探索，因为对于公共组件库开发来说，需要考虑的问题有很多，所以灵活性要求也更高，如果用Vue Render这种更接近编译的方式来编写组件库，可能会让逻辑更清晰，虽然不停的创建元素的写法是挺恶心的哈哈哈哈~~
+
+接下来就是用来进行一下实战了，在实战的时候有什么坑就到时候再慢慢填咯~~
 
 
 
