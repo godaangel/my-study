@@ -1,4 +1,4 @@
-# Vue Render介绍和一些简单的实例
+# Vue Render介绍和一些基本的实例
 
 _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力，这就是**render 函数**，它比 template 更接近编译器。_（**从官网复制的，慌得一批，其实简单来说就是以函数的方式写HTML，可控性更强一些~**）
 
@@ -686,7 +686,7 @@ npm install babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-
 </script>
 ```
 
-**子组件`wii-jsx-item`**
+**子组件**`wii-jsx-item`
 
 _该子组件在父组件中被引入，并用JSX的写法渲染。_
 
@@ -741,6 +741,4 @@ export default {
 ```
 
 JSX的主要转换还是依靠我们之前安装的[babel插件](https://github.com/vuejs/babel-plugin-transform-vue-jsx)，而JSX的事件以及属性的用法见babel插件的[使用说明](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage)，这里面包含了vue里面事件和属性对应的用法说明。
-
-
 
