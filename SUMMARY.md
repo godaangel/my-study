@@ -36,6 +36,7 @@
   * [npm i --save和--save-dev的区别](npm-i-save548c-save-dev-de-qu-bie.md)
 * App混合开发
   * [weex环境搭建和ios运行](weexhuan-jing-da-jian-he-ios-yun-xing.md)
-* Webpack
+* [Webpack](webpack.md)
   * [Less的绝对路径引入](lessde-jue-dui-lu-jing-yin-ru.md)
+* [wxapp-image-player](wxapp-image-player.md)
 
