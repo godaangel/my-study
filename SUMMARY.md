@@ -39,4 +39,6 @@
 * [Webpack](webpack.md)
   * [Less的绝对路径引入](lessde-jue-dui-lu-jing-yin-ru.md)
 * [wxapp-image-player](wxapp-image-player.md)
+* [小程序](xiao-cheng-xu.md)
+  * [第三方开放平台](xiao-cheng-xu/di-san-fang-kai-fang-ping-tai.md)
 
