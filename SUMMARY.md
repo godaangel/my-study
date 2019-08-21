@@ -27,7 +27,7 @@
   * [Git小技巧](gitxue-xi/gitxiao-ji-qiao.md)
 * [MongoDB](mongodb.md)
   * [安装](mongodb/an-zhuang.md)
-* CSS
+* [CSS](css.md)
   * [隐藏滚动条](yin-cang-gun-dong-tiao.md)
   * [帧动画](zheng-dong-hua.md)
 * ES6-ES7-ES8
@@ -41,4 +41,5 @@
 * [wxapp-image-player](wxapp-image-player.md)
 * [小程序](xiao-cheng-xu.md)
   * [第三方开放平台](xiao-cheng-xu/di-san-fang-kai-fang-ping-tai.md)
+  * 视频流自动播放
 
