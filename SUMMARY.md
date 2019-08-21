@@ -41,5 +41,5 @@
 * [wxapp-image-player](wxapp-image-player.md)
 * [小程序](xiao-cheng-xu.md)
   * [第三方开放平台](xiao-cheng-xu/di-san-fang-kai-fang-ping-tai.md)
-  * 视频流自动播放
+  * [视频流自动播放](xiao-cheng-xu/shi-pin-liu-zi-dong-bo-fang.md)
 
